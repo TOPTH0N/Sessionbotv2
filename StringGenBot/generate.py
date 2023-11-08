@@ -53,12 +53,12 @@ async def main(_, msg):
 
 async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bool = False):
     if telethon:
-        ty = "تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱"
+        ty = "تيرمكـس - Termux"
     else:
-        ty = "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"
+        ty = "بايروجـرام - PyroGram
     if is_bot:
         ty += "بوت"
-    await msg.reply(f"**» استخـراج الجلسـة **{ty}** بواسطـة 𝗧𝗲𝗽𝘁𝗵𝗼𝗻 جـارٍ..**.")
+    await msg.reply(f"**» استخـراج الجلسـة **{ty}** بواسطـة xXStrem جـارٍ..**.")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "**⎆ أرسـل الأيبـي أيـدي الخـاص بـك\n للتخطـي أرسـل /skip ...**", filters=filters.text)
     if await cancelled(api_id_msg):
@@ -77,9 +77,9 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
             return
         api_hash = api_hash_msg.text
     if not is_bot:
-        t = "**⎆ يـرجـى إرسـال رقـم هاتفـك مـع رمـز الدولة مثــال 📱: +96279702387**"
+        t = "**⎆ يـرجـى إرسـال رقـم هاتفـك مـع رمـز الدولة مثــال 📱: +9647700000000**"
     else:
-        t = "⎆ ** يرجـى إرسـال توكـن بوتـك مثــال ⭐ : 5396274279:hshhshshshshss`'**"
+        t = "⎆ ** يرجـى إرسـال توكـن بوتـك مثــال ⭐ : 1234567891:SourcexXStrem`'**"
     phone_number_msg = await bot.ask(user_id, t, filters=filters.text)
     if await cancelled(phone_number_msg):
         return
@@ -158,7 +158,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @TepthonSessionBot\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه قنـاة السورس @Tepthon ."
+    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @TopSessionBoT\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه قنـاة السورس @xXStrem ."
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -167,7 +167,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» تم استخـراج {} كود جلسـة.\n\nيرجـى تفقـد الرسائـل المحفوظـة ! \n\n**مستخـرج مـن** @Tepthon".format("تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱" if telethon else "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"))
+    await bot.send_message(msg.chat.id, "» تم استخـراج {} كود جلسـة.\n\nيرجـى تفقـد الرسائـل المحفوظـة ! \n\n**مستخـرج مـن** @xXStrem".format("تيرمكـس - Termux" if telethon else "بايروجـرام - PyroGram"))
 
 
 async def cancelled(msg):
